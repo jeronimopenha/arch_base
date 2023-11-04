@@ -2,10 +2,10 @@
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
-sed -i '177s/.//' /etc/locale.gen
-sed -i '178s/.//' /etc/locale.gen
-sed -i '393s/.//' /etc/locale.gen
-sed -i '394s/.//' /etc/locale.gen
+#sed -i '177s/.//' /etc/locale.gen
+#sed -i '178s/.//' /etc/locale.gen
+#sed -i '393s/.//' /etc/locale.gen
+#sed -i '394s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=pt_BR.utf-8" >> /etc/locale.conf
 echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
@@ -23,6 +23,8 @@ pacman -S --needed grub networkmanager network-manager-applet dialog wpa_supplic
 #grub-btrfs
 #reflector bluez bluez-utils virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2
 
+pacman -S --needed xorg-server xorg-xinit xorg-apps mesa
+pacman -S --needed xf86-video-intel
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
