@@ -1,0 +1,14 @@
+sudo ysctl vm.swappiness=10
+reflector
+ver artigo diolinux after install arch
+
+https://wiki.manjaro.org/index.php/Swap
+
+sudo truncate -s 0 /swapfile
+sudo chattr +C /swapfile
+sudo btrfs property set /swapfile compression none
+
+btrfs subvolume create /@swapfile
+Just replace /swapfile with /@swapfile/swapfile.
+
+sudo chmod 600 /swapfile
